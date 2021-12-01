@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.9"
+# command to install dependencies
+before_script:
+  - pip install -r requirements.txt
+
+env: DJANGO_SETTINGS_MODULE="pureBeurre.travis"
+
+services:
+  - postgresql
+# command to run tests
+script: pytest
