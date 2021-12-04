@@ -8,3 +8,5 @@
 - Déployer une application avec [Travis](https://www.travis-ci.com/) sur un serveur [Ngnix](https://www.nginx.com/) et [Gunicorn](https://gunicorn.org/)
 - Monitorer et optimiser l'application avec [Centry](https://sentry.io/) et [Newrelic](https://newrelic.com/fr)
 
+### Tableau Trello Agile:
+[![Trello](http://www.acanthoceras.fr/wp-content/uploads/2019/03/UNE-trello.png)](https://trello.com/b/85aOFErN/purebeurredeploiement)
