@@ -1,10 +1,17 @@
-dist: bionic
+dist: focal
 language: python
 
 python:
   - '3.9'
 
 addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:chris-lea/redis-server'
+    packages:
+    - redis-tools
+    - redis-server
+
   chrome: stable
 
 branches:
