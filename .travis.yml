@@ -1,13 +1,28 @@
+dist: bionic
 language: python
+
 python:
-  - "3.9"
-# command to install dependencies
-before_script:
+  - '3.9'
+
+addons:
+  chrome: stable
+
+branches:
+  only:
+    - main
+    
+install:
   - pip install -r requirements.txt
 
-env: DJANGO_SETTINGS_MODULE="pureBeurre.travis"
+before_script:
+  - install-webdrivers --path webdrivers
+
+env:
+  global:
+    - DJANGO_SETTINGS_MODULE="config.settings.travis"
 
 services:
   - postgresql
-# command to run tests
-script: pytest
+
+script:
+  - pytest
