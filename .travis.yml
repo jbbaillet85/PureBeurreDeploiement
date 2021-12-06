@@ -12,7 +12,7 @@ branches:
     - main
     
 install:
-  - pip install -r requirements.txt
+  - pip install -r requirements_travis.txt
 
 before_script:
   - install-webdrivers --path webdrivers
