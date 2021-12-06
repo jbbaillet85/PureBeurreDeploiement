@@ -78,7 +78,7 @@ sniffio==1.2.0
 sortedcontainers==2.4.0
 sqlparse==0.4.2
 ssh-import-id==5.10
-systemd-python==234
+# systemd-python==234
 tablib==3.1.0
 toml==0.10.2
 trio==0.19.0
