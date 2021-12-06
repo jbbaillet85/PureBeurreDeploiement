@@ -16,7 +16,6 @@ defusedxml==0.7.1
 diff-match-patch==20200713
 distlib==0.3.0
 distro==1.4.0
-distro-info===0.23ubuntu1
 Django==3.2.9
 django-import-export==2.6.1
 entrypoints==0.3
