@@ -11,7 +11,7 @@ import time
 class TestIdentification(StaticLiveServerTestCase):
     def test_register(self):
         # Open the browser with webdrive
-        self.service = Service("tests/tests_functional/chromedriver.exe")
+        self.service = Service("tests/tests_functional/chromedriver")
         self.driver = webdriver.Chrome(service=self.service)
         self.driver.get(self.live_server_url + reverse("register"))
 
