@@ -1,6 +1,7 @@
 [![wakatime](https://wakatime.com/badge/user/648b0556-0c0e-4e9d-b952-2bea950dabe6/project/245f5d49-92f8-456e-8b84-96383672db0e.svg)](https://wakatime.com/badge/user/648b0556-0c0e-4e9d-b952-2bea950dabe6/project/245f5d49-92f8-456e-8b84-96383672db0e)
 [![Build Status](https://app.travis-ci.com/jbbaillet85/PureBeurreDeploiement.svg?branch=main)](https://app.travis-ci.com/jbbaillet85/PureBeurreDeploiement)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4b135203e1da4f708fc12e18f1e8cab3)](https://www.codacy.com/gh/jbbaillet85/PureBeurreDeploiement/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jbbaillet85/PureBeurreDeploiement&amp;utm_campaign=Badge_Grade)
+[![Coverage Status](https://coveralls.io/repos/github/jbbaillet85/PureBeurreDeploiement/badge.svg?branch=main)](https://coveralls.io/github/jbbaillet85/PureBeurreDeploiement?branch=main)
 # Déployez votre application sur un serveur comme un pro !
 ## Mettez en ligne une application Django 🐍 en déploiement continu
 

@@ -10,7 +10,7 @@ addons:
 branches:
   only:
     - main
-    
+
 install:
   - pip install -r requirements.txt
   - wget -N https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_linux64.zip -P ~/
@@ -20,12 +20,19 @@ install:
   - sudo chmod +x /usr/local/share/chromedriver
   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 
+  before_script:
+  - pip install python-coveralls
+  - pip install pytest-cov
+
 env:
   global:
-    - DJANGO_SETTINGS_MODULE="pureBeurre.settings.travis"
+    - DJANGO_SETTINGS_MODULE="pureBeurre.travis"
 
 services:
   - postgresql
 
 script:
   - pytest
+
+after_success:
+  coveralls
