@@ -1,4 +1,4 @@
-from settings import * # noqa
+from pureBeurre.settings import * # noqa
 
 DATABASES = {
     'default': {
