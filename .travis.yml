@@ -20,10 +20,6 @@ install:
   - sudo chmod +x /usr/local/share/chromedriver
   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 
-  before_script:
-  - pip install python-coveralls
-  - pip install pytest-cov
-
 env:
   global:
     - DJANGO_SETTINGS_MODULE="pureBeurre.travis"
