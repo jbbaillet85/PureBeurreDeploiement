@@ -1,4 +1,4 @@
-from pureBeurre.settings import *
+from settings import *
 
 DATABASES = {
     'default': {
