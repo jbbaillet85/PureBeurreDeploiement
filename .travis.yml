@@ -23,7 +23,7 @@ install:
   - sudo rm ~/chromedriver_linux64.zip
   - sudo mv -f ~/chromedriver /usr/local/share/
   - sudo chmod +x /usr/local/share/chromedriver
-  - sudo ln -s /usr/local/share/chromedriver /travis/PureBeurreDeploiement/tests/tests_functional/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver home/travis/virtualenv/python3.9.7/PureBeurreDeploiement/tests/tests_functional/chromedriver
 
 env:
   global:
