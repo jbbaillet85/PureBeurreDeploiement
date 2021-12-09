@@ -12,7 +12,8 @@ class TestIdentification(StaticLiveServerTestCase):
     def test_register(self):
         # Open the browser with webdrive
         self.service = Service("tests/tests_functional/chromedriver")
-        self.driver = webdriver.Chrome(service=self.service)
+        self.service.start()
+        self.driver = webdriver.Remote(self.service.service_url)
         self.driver.get(self.live_server_url + reverse("register"))
 
         id_username = self.driver.find_element(By.ID, "id_username")
