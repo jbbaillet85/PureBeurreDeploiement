@@ -21,8 +21,8 @@ install:
   - sudo wget -N https://chromedriver.storage.googleapis.com/97.0.4692.36/chromedriver_linux64.zip -P ~/
   - sudo unzip ~/chromedriver_linux64.zip -d ~/
   - sudo rm ~/chromedriver_linux64.zip
-  - sudo mv -f ~/chromedriver  /home/travis/virtualenv/python3.9.7/tests/tests_functionnal
-  - sudo chmod +x /home/travis/virtualenv/python3.9.7/tests/tests_functionnal/chromedriver
+  - sudo mv -f ~/chromedriver  /home/travis/PureBeurreDeploiement/tests/tests_functionnal
+  - sudo chmod +x /home/travis/PureBeurreDeploiement/tests/tests_functionnal/chromedriver
 
 env:
   global:
