@@ -1,3 +1,4 @@
+sudo: required
 dist: bionic
 language: python
 
@@ -5,7 +6,11 @@ python:
   - '3.9'
 
 addons:
-  chrome: stable
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 branches:
   only:
@@ -16,9 +21,8 @@ install:
   - sudo wget -N https://chromedriver.storage.googleapis.com/97.0.4692.36/chromedriver_linux64.zip -P ~/
   - sudo unzip ~/chromedriver_linux64.zip -d ~/
   - sudo rm ~/chromedriver_linux64.zip
-  - sudo mv -f ~/chromedriver /usr/local/share/
-  - sudo chmod +x /usr/local/share/chromedriver
-  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  - sudo mv -f ~/chromedriver  /home/travis/virtualenv/python3.9.7/tests/tests_functionnal
+  - sudo chmod +x /home/travis/virtualenv/python3.9.7/tests/tests_functionnal/chromedriver
 
 env:
   global:
