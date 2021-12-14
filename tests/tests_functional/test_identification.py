@@ -5,13 +5,14 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from django.urls import reverse
 import time
 
-
+path_driver = "tests/tests_functional/chromedriver"
 class TestIdentification(StaticLiveServerTestCase):
 
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.selenium = WebDriver(executable_path="tests/tests_functional/chromedriver")
+        cls.selenium = WebDriver(executable_path=path_driver)
+        os.chmod(path_driver, '0755')
         cls.selenium.implicitly_wait(10)
 
     @classmethod
