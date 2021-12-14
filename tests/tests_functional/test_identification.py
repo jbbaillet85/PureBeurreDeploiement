@@ -16,7 +16,7 @@ class TestIdentification(StaticLiveServerTestCase):
     
     def test_register(self):
         # Open the browser with webdrive
-        self.service = Service(executable_path=str(BASE_DIR / 'tests' / 'tests_functional' / 'chromedriver'),
+        self.service = Service(executable_path=str(BASE_DIR, "/tests/tests_functional/chromedriver"),
                                service_args=chrome_options)
         self.service.start()
         self.driver = webdriver.Remote(self.service.service_url)
