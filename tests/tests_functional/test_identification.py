@@ -11,7 +11,8 @@ class TestIdentification(StaticLiveServerTestCase):
     
     def test_register(self):
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-        path_register = reverse('register')
+        # path_register = reverse('register')
+        path_register="/spaceUser/register/"
         driver.get(path_register)
         # Open the browser with webdrive
         id_username = driver.find_element(By.ID, "id_username")
@@ -34,3 +35,7 @@ class TestIdentification(StaticLiveServerTestCase):
         # close the browser
         time.sleep(300)
         driver.close()
+
+if __name__=="__main__":
+    test=TestIdentification()
+    test.test_register()
