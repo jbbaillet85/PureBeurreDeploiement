@@ -1,12 +1,23 @@
 from selenium.webdriver.common.by import By
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
 from django.urls import reverse
 import time
 from pureBeurre.settings.travis import BASE_DIR
 
 
 class TestIdentification(StaticLiveServerTestCase):
+    options = Options()
+    options.binary_location = "C:\\path\\to\\chrome.exe"    #chrome binary location specified here
+    options.add_argument("--start-maximized") #open Browser in maximized mode
+    options.add_argument("--no-sandbox") #bypass OS security model
+    options.add_argument("--disable-dev-shm-usage") #overcome limited resource problems
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    driver = webdriver.Chrome(options=options, executable_path= BASE_DIR + 'tests/tests_functional/chromedriver')
+    
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
