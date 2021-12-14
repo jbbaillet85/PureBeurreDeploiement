@@ -11,7 +11,7 @@ class TestIdentification(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.selenium = WebDriver(executable_path=os.path("tests/tests_functional/chromedriver"))
+        cls.selenium = WebDriver(executable_path="tests/tests_functional/chromedriver")
         cls.selenium.implicitly_wait(10)
 
     @classmethod
