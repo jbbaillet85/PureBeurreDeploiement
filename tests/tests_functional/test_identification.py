@@ -1,3 +1,4 @@
+import os
 from selenium.webdriver.common.by import By
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -17,6 +18,7 @@ class TestIdentification(StaticLiveServerTestCase):
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
     driver = webdriver.Chrome(options=options, executable_path= BASE_DIR + '/tests/tests_functional/chromedriver')
+    os.chmod(driver, '0755')
     
     @classmethod
     def setUpClass(cls):
