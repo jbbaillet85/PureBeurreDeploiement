@@ -1,3 +1,4 @@
+import os
 from selenium.webdriver.common.by import By
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -10,7 +11,7 @@ class TestIdentification(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.selenium = WebDriver()
+        cls.selenium = WebDriver(executable_path=os.path("tests/tests_functional/chromedriver"))
         cls.selenium.implicitly_wait(10)
 
     @classmethod
