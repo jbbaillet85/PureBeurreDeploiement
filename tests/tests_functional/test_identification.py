@@ -16,7 +16,7 @@ class TestIdentification(StaticLiveServerTestCase):
     options.add_argument("--disable-dev-shm-usage") #overcome limited resource problems
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    driver = webdriver.Chrome(options=options, executable_path= BASE_DIR + 'tests/tests_functional/chromedriver')
+    driver = webdriver.Chrome(options=options, executable_path= BASE_DIR + '/tests/tests_functional/chromedriver')
     
     @classmethod
     def setUpClass(cls):
