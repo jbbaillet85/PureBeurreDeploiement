@@ -6,12 +6,18 @@ from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.urls import reverse
 import time
+from pureBeurre.settings.settings import BASE_DIR
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('window-size=1920x1080')
 
 class TestIdentification(StaticLiveServerTestCase):
+    
     def test_register(self):
         # Open the browser with webdrive
-        self.service = Service("./tests/tests_functional/chromedriver")
+        self.service = Service(executable_path=str(BASE_DIR / "tests/tests_functional/chromedriver"),
+                               service_args=chrome_options)
         self.service.start()
         self.driver = webdriver.Remote(self.service.service_url)
         self.driver.get(self.live_server_url + reverse("register"))
