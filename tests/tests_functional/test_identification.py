@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.firefox.webdriver import WebDriver
 from django.urls import reverse
 import time
 
@@ -20,7 +20,8 @@ class TestIdentification(StaticLiveServerTestCase):
     
     def test_register(self):
         # Open the browser with webdrive
-        self.selenium.get('%s%s' % (self.live_server_url, '/register/'))
+        path_register = reverse('register')
+        self.selenium.get('%s%s' % (self.live_server_url, path_register))
 
         id_username = self.selenium.find_element(By.ID, "id_username")
         id_username.send_keys("user1")
