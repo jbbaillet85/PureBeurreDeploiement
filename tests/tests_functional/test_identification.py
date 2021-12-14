@@ -6,7 +6,7 @@ from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.urls import reverse
 import time
-from pureBeurre.settings.settings import BASE_DIR
+from pureBeurre.settings.travis import BASE_DIR
 
 
 class TestIdentification(StaticLiveServerTestCase):
