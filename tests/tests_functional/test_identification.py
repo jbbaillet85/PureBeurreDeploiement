@@ -6,12 +6,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 from django.urls import reverse
 import time
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('window-size=1920x1080')
+
 
 class TestIdentification(StaticLiveServerTestCase):
     
     def test_register(self):
         service = Service(executable_path=ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service)
+        driver = webdriver.Chrome(service=service, options=chrome_options)
         path_register = reverse('register')
         driver.get(path_register)
         # Open the browser with webdrive
