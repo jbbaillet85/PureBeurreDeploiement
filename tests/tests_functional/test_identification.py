@@ -8,12 +8,11 @@ from django.urls import reverse
 import time
 import os
 
-
 class TestIdentification(StaticLiveServerTestCase):
     def test_register(self):
         # Open the browser with webdrive
         os.chmod("tests/tests_functional/chromedriver", 755)
-        self.service = Service("tests/tests_functional/chromedriver")
+        self.service = Service("tests/tests_functional/chromedriver", service_args=['--headless', '--no-sandbox', '--disable-dev-shm-usage'])
         self.driver = webdriver.Chrome(service=self.service)
         self.driver.get(self.live_server_url + reverse("register"))
 
