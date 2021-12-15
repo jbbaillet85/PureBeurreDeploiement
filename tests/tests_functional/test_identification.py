@@ -10,9 +10,9 @@ import time
 class TestIdentification(StaticLiveServerTestCase):
     
     def test_register(self):
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-        # path_register = reverse('register')
-        path_register="/spaceUser/register/"
+        service = Service(executable_path=ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service)
+        path_register = reverse('register')
         driver.get(path_register)
         # Open the browser with webdrive
         id_username = driver.find_element(By.ID, "id_username")
