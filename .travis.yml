@@ -14,6 +14,9 @@ branches:
 install:
   - pip install -r requirements.txt
 
+before_script:
+  - install-webdrivers --path webdrivers
+
 env:
   global:
     - DJANGO_SETTINGS_MODULE="pureBeurre.settings.travis"
