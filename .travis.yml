@@ -6,11 +6,12 @@ python:
   - '3.9'
 
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
+  # apt:
+    # sources:
+     # - google-chrome
+    # packages:
+     # - google-chrome-stable
 
 branches:
   only:

@@ -6,8 +6,9 @@ import os
 
 
 load_dotenv()
-env_path = Path('.')/'.env'
+env_path = Path('..')/'.env'
 load_dotenv(dotenv_path=env_path)
+print(env_path)
 
 sentry_sdk.init(
     dsn="https://75c307e1a11144e3b43e155c5dff1691@o639858.ingest.sentry.io/6081112",
