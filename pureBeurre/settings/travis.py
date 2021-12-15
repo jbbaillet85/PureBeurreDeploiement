@@ -1,4 +1,4 @@
-from settings import *
+from settings.__init__ import *
 
 DATABASES = {
     'default': {
