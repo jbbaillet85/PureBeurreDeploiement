@@ -4,16 +4,21 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from selenium.webdriver.chrome.options import Options
 from django.urls import reverse
 import time
 import os
 
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
 class TestIdentification(StaticLiveServerTestCase):
     def test_register(self):
         # Open the browser with webdrive
         os.chmod("tests/tests_functional/chromedriver", 755)
-        self.service = Service("tests/tests_functional/chromedriver", service_args=['--headless', '--no-sandbox', '--disable-dev-shm-usage'])
-        self.driver = webdriver.Chrome(service=self.service)
+        self.service = Service("tests/tests_functional/chromedriver")
+        self.driver = webdriver.Chrome(service=self.service, chrome_options=chrome_options)
         self.driver.get(self.live_server_url + reverse("register"))
 
         id_username = self.driver.find_element(By.ID, "id_username")
