@@ -1,4 +1,4 @@
-from .settings import *
+from settings import *
 
 DATABASES = {
     'default': {
@@ -10,5 +10,3 @@ DATABASES = {
         'PORT': '',
     },
 }
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
