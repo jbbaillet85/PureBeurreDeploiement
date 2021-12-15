@@ -1,4 +1,4 @@
-import __init__
+from . import *
 
 DATABASES = {
     'default': {
