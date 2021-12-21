@@ -10,7 +10,7 @@ env_path = Path('.')/'.env'
 load_dotenv(dotenv_path=env_path)
 
 sentry_sdk.init(
-    dsn="https://75c307e1a11144e3b43e155c5dff1691@o639858.ingest.sentry.io/6081112",
+    dsn="https://75c307e1a11144e3b43e155c5dff1691@o639858.ingest.sentry.io/6081112", # noqa
     integrations=[DjangoIntegration()],
     traces_sample_rate=1.0,
     send_default_pii=True,
@@ -20,12 +20,12 @@ sentry_sdk.init(
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY',('SECRET_KEY'))
+SECRET_KEY = os.getenv('SECRET_KEY', ('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '46.101.97.111',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '46.101.97.111', ]
 
 
 # Application definition
@@ -141,7 +141,7 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
     'root': {
-        'level': 'INFO', # WARNING by default. Change this to capture more than warnings.
+        'level': 'INFO',
         'handlers': ['sentry'],
     },
     'formatters': {
@@ -152,8 +152,8 @@ LOGGING = {
     },
     'handlers': {
         'sentry': {
-            'level': 'INFO', # To capture more than ERROR, change to WARNING, INFO, etc.
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+            'level': 'INFO',
+            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler', # noqa
             'tags': {'custom-tag': 'x'},
         },
         'console': {
